@@ -1,4 +1,4 @@
-# README - Dziennik Treningów
+# README - Dziennik Treningów 💪
 
 ## Opis
 Aplikacja Dziennik Treningów to narzędzie do śledzenia i zarządzania treningami. 
@@ -12,5 +12,12 @@ Umożliwia użytkownikom rejestrowanie swoich sesji treningowych, monitorowanie 
 |Data|DateTime|25.04.2026|
 |Rekord|Integer|45|
 
+## Rozbudowa
+Aplikacja będzie mieć funkcje takie jak:
+- Dodawanie nowych ćwiczeń
+- Edycja rekordów
+- Robienie zdjęć progressu
+- Statystyki postępów
+
 ## Autor
-Autorem projektu jest Igor Wróblewski
+Autorem projektu jest Igor Wróblewski 
