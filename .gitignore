@@ -1,6 +1,7 @@
 # Build outputs
 bin/
 obj/
+artifacts/
 
 # Visual Studio
 .vs/
@@ -10,6 +11,16 @@ obj/
 *.userosscache
 *.sln.docstates
 *.dtbcache.v2
+*.pubxml
+
+# ReSharper / Rider
+.idea/
+_ReSharper*/
+
+# VS Code
+.vscode/
+.vshistory/
+*.code-workspace
 
 # MAUI / Windows packaging
 AppPackages/
@@ -18,20 +29,45 @@ BundleArtifacts/
 *.appxbundle
 *.msix
 *.msixbundle
+*.nupkg
 
-# Logs / caches
+# Logs / caches / build diagnostics
 *.binlog
 *.log
 *.tlog
 *.cache
 
-# IDE
-.vscode/
-.idea/
+# Test results
+TestResults/
+*.trx
+*.coverage
+
+# Editor temp files
+*.tmp
+*.swp
+*.bak
+*.orig
+*~
+
+# Signing material and certificates - never commit these
+*.keystore
+*.jks
+*.pfx
+*.p12
+*.snk
+*.cer
+*.cert
+*.mobileprovision
 
 # OS-generated files
 .DS_Store
+Thumbs.db
+Thumbs.db:encryptable
+desktop.ini
 
 # NuGet
 packages/
 project.lock.json
+
+# Other
+notki/

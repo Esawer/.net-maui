@@ -1,24 +1,26 @@
 ﻿namespace _177918
 {
+    /// <summary>
+    /// Root content page of the application.
+    /// </summary>
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainPage"/> class.
+        /// </summary>
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        /// <summary>
+        /// Handles the tap on the profile icon in the navigation bar.
+        /// </summary>
+        /// <param name="sender">The image that raised the event.</param>
+        /// <param name="args">Event data.</param>
+        private async void OnProfileTapped(object? sender, TappedEventArgs args)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            await DisplayAlert("Profil", "Ekran profilu pojawi się tutaj.", "OK");
         }
     }
 }

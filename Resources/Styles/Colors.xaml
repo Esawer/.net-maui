@@ -5,18 +5,38 @@
 
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
-    <Color x:Key="Primary">#512BD4</Color>
-    <Color x:Key="PrimaryDark">#ac99ea</Color>
-    <Color x:Key="PrimaryDarkText">#242424</Color>
-    <Color x:Key="Secondary">#DFD8F7</Color>
-    <Color x:Key="SecondaryDarkText">#9880e5</Color>
-    <Color x:Key="Tertiary">#2B0B98</Color>
+    <!-- Neutral surfaces: near-white in the light theme, near-black in the dark theme. -->
+    <Color x:Key="Primary">#fafafa</Color>
+    <Color x:Key="Secondary">#f4f4f5</Color>
+    <Color x:Key="Tertiary">#e4e4e7</Color>
+
+    <Color x:Key="PrimaryDark">#18181b</Color>
+    <Color x:Key="SecondaryDark">#27272a</Color>
+    <Color x:Key="TertiaryDark">#3f3f46</Color>
+
+    <!-- Disambiguate both by name: *DarkText = dark text on light surfaces, *LightText = light text on dark surfaces. -->
+    <Color x:Key="PrimaryDarkText">#18181b</Color>
+    <Color x:Key="PrimaryLightText">#fafafa</Color>
+    <Color x:Key="SecondaryLightText">#52525b</Color>
+    <Color x:Key="SecondaryDarkText">#a1a1aa</Color>
+
+    <!-- Single accent hue (indigo) shared by both themes. -->
+    <Color x:Key="AccentLight">#4f46e5</Color>
+    <Color x:Key="AccentDark">#a5b4fc</Color>
+
+    <!-- Semantic warning hue: used for critical states (e.g. a tile border when the weekly count is too low). -->
+    <Color x:Key="Danger">#DC2626</Color>
+    <Color x:Key="DangerDark">#F87171</Color>
+    <Color x:Key="Success">#10B981</Color>
+    <Color x:Key="SuccessDark">#34D399</Color>
 
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
+    <!-- Legacy keys still referenced by Styles.xaml; prefer the Accent* keys for new code. -->
     <Color x:Key="Magenta">#D600AA</Color>
     <Color x:Key="MidnightBlue">#190649</Color>
-    <Color x:Key="OffBlack">#1f1f1f</Color>
+    <!-- Surface color used by the Page/Shell/NavigationPage styles in Styles.xaml. -->
+    <Color x:Key="OffBlack">#18181b</Color>
 
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>
