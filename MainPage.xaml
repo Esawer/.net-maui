@@ -4,15 +4,17 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="_177918.MainPage"
              Shell.NavBarIsVisible="False">
-
+    
 
     <Grid RowDefinitions="Auto, *, Auto">
         <Border Grid.Row="0" Style="{StaticResource Navbar}">
             <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
-                <Label Text="Dziennik Treningów" TextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource PrimaryLightText}}" Style="{StaticResource SubHeadline}" VerticalOptions="Center" />
-                <ImageButton Source="person.png" Aspect="AspectFit" HorizontalOptions="Center" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" BorderColor="Transparent">
+                <Label Text="Dziennik Treningów" TextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource PrimaryLightText}}" Style="{StaticResource SubHeadline}" VerticalOptions="Center">
+                    
+                </Label> 
+                <ImageButton Source="person.png" Aspect="AspectFit" HorizontalOptions="Center" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnProfileClicked">
                     <ImageButton.Behaviors>
-                        <toolkit:IconTintColorBehavior TintColor="{StaticResource SecondaryLightText}"/>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryDarkText}, Dark={StaticResource SecondaryDarkText}}"/>
                     </ImageButton.Behaviors>
                 </ImageButton>
             </FlexLayout>
@@ -21,7 +23,7 @@
         <Grid Grid.Row="1" RowDefinitions="*,*">
             <FlexLayout Direction="Row" Grid.Row="0">
                 <Border Style="{StaticResource Card}" Stroke="Transparent" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
-                    <VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
                         <Image Source="calendar.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
                             <Image.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="{StaticResource AccentDark}" />
@@ -33,7 +35,7 @@
                 </Border>
 
                 <Border Style="{StaticResource Card}" Stroke="Transparent" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
-                    <VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
                         <Image Source="trophy.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
                             <Image.Behaviors>
                                 <toolkit:IconTintColorBehavior TintColor="{StaticResource AccentDark}" />
@@ -46,11 +48,11 @@
             </FlexLayout>
 
             <FlexLayout Direction="Row" Grid.Row="1">
-                <Border Style="{StaticResource Card}" Stroke="{StaticResource SuccessDark}" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
-                    <VerticalStackLayout>
+                <Border Style="{StaticResource Card}" Stroke="{AppThemeBinding Light={StaticResource Success}, Dark={StaticResource SuccessDark}}" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
                         <Image Source="like.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
                             <Image.Behaviors>
-                                <toolkit:IconTintColorBehavior TintColor="{StaticResource Success}" />
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Success}, Dark={StaticResource SuccessDark}}" />
                             </Image.Behaviors>
                         </Image>
                         <Label Text="2" Style="{StaticResource SubHeadline}" />
@@ -59,10 +61,10 @@
                 </Border>
 
                 <Border Style="{StaticResource Card}" Stroke="Transparent" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
-                    <VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
                         <Image Source="fire.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
                             <Image.Behaviors>
-                                <toolkit:IconTintColorBehavior TintColor="{StaticResource DangerDark}" />
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Danger}, Dark={StaticResource DangerDark}}" />
                             </Image.Behaviors>
                         </Image>
                         <Label Text="Dzisiaj" Style="{StaticResource SubHeadline}" />

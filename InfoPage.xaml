@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="_177918.InfoPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *">
+        <Border Grid.Row="0" Style="{StaticResource Navbar}">
+            <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
+                <Label Text="Dziennik Treningów" TextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource PrimaryLightText}}" Style="{StaticResource SubHeadline}" VerticalOptions="Center">
+
+                </Label>
+                <ImageButton Source="x.png" Aspect="AspectFit" HorizontalOptions="Center" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnProfileClicked">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryDarkText}, Dark={StaticResource SecondaryDarkText}}"/>
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </FlexLayout>
+        </Border>
+
+        <Grid Grid.Row="1" RowDefinitions="*,*">
+            <FlexLayout Direction="Row" Grid.Row="0">
+                <Border Style="{StaticResource Card}" Stroke="Transparent" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStatsClicked" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
+                        <Image Source="stats.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource AccentDark}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="Twoje Statystyki" Style="{StaticResource SubHeadline}"  FontSize="16"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Style="{StaticResource Card}" Stroke="Transparent" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainingsClicked" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
+                        <Image Source="history.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource AccentDark}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="Historia Treningów" Style="{StaticResource SubHeadline}"  FontSize="16"/>
+                    </VerticalStackLayout>
+                </Border>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row" Grid.Row="1">
+                <Border Style="{StaticResource Card}" Stroke="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" Margin="4" Padding="16"  FlexLayout.Grow="1" FlexLayout.Basis="0">
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
+                        <Image Source="person.png" WidthRequest="48" HeightRequest="48" HorizontalOptions="Center">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="Twórca" Style="{StaticResource SubHeadline}"  FontSize="16"/>
+                        <Label Text="Igor Wróblewski" HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Border>
+            </FlexLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

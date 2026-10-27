@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="_177918.TrainingsPage"
+             Title="Treningi"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *">
+        <Border Grid.Row="0" Style="{StaticResource Navbar}">
+            <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
+                <Label Text="Historia Treningów" TextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource PrimaryLightText}}" Style="{StaticResource SubHeadline}" VerticalOptions="Center" />
+                <ImageButton Source="x.png" Aspect="AspectFit" HorizontalOptions="Center" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnProfileClicked">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryDarkText}, Dark={StaticResource SecondaryDarkText}}"/>
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </FlexLayout>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="8" Spacing="8">
+
+                <!-- Card is tappable; CommandParameter is a key resolved by name in code-behind. -->
+                <Border Style="{StaticResource Card}" Stroke="Transparent" Padding="16" SemanticProperties.Description="Poniedziałek Push, 45 minut" SemanticProperties.Hint="Kliknij, aby rozwinąć szczegóły">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainingTapped" CommandParameter="Monday" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Poniedziałek — Push" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="45 min · 12 serii" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                        <Label x:Name="DetailsMonday" IsVisible="False" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" Text="Klatka 4×8 · Barki 3×12 · Triceps 3×15" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Style="{StaticResource Card}" Stroke="Transparent" Padding="16" SemanticProperties.Description="Środa Pull, 52 minuty" SemanticProperties.Hint="Kliknij, aby rozwinąć szczegóły">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainingTapped" CommandParameter="Wednesday" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Środa — Pull" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="52 min · 14 serii" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                        <Label x:Name="DetailsWednesday" IsVisible="False" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" Text="Plecy 4×8 · Biceps 3×12 · Brzuch 3×15" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Style="{StaticResource Card}" Stroke="Transparent" Padding="16" SemanticProperties.Description="Piątek Legs, 38 minut" SemanticProperties.Hint="Kliknij, aby rozwinąć szczegóły">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainingTapped" CommandParameter="Friday" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Piątek — Legs" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="38 min · 10 serii" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                        <Label x:Name="DetailsFriday" IsVisible="False" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" Text="Przysiad 4×8 · Martwy ciąg 3×6 · Łydki 3×15" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Style="{StaticResource Card}" Stroke="Transparent" Padding="16" SemanticProperties.Description="Sobota Cardio, 30 minut" SemanticProperties.Hint="Kliknij, aby rozwinąć szczegóły">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainingTapped" CommandParameter="Saturday" />
+                    </Border.GestureRecognizers>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Sobota — Cardio" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="30 min · 6 km" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                        <Label x:Name="DetailsSaturday" IsVisible="False" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" Text="Bieg ciągły, tempo 5:00/km · tętno 152" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Label acting as a button: gesture recognizer + padding for touch target + semantics for accessibility. -->
+                <Label Text="Pokaż wszystkie szczegóły"
+                       FontSize="14"
+                       Padding="12"
+                       HorizontalOptions="Center"
+                       TextColor="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}"
+                       SemanticProperties.Description="Pokaż wszystkie szczegóły treningów"
+                       SemanticProperties.Hint="Kliknij, aby rozwinąć lub zwinąć szczegóły wszystkich treningów">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnToggleAllTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

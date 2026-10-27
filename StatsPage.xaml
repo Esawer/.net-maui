@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="_177918.StatsPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *">
+        <Border Grid.Row="0" Style="{StaticResource Navbar}">
+            <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
+                <Label Text="Statystyki" TextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource PrimaryLightText}}" Style="{StaticResource SubHeadline}" VerticalOptions="Center" />
+                <ImageButton Source="x.png" Aspect="AspectFit" HorizontalOptions="Center" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnProfileClicked">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryDarkText}, Dark={StaticResource SecondaryDarkText}}"/>
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </FlexLayout>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*" Padding="8" RowSpacing="8" ColumnSpacing="8">
+
+                <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource Card}" Stroke="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" StrokeThickness="2" Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Image Source="calendar.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="4" FontSize="26" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="Treningi w tym miesiącu" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource Card}" Stroke="Transparent" Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Image Source="history.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="5 h 32 min" FontSize="22" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="Łączny czas" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource Card}" Stroke="{AppThemeBinding Light={StaticResource Danger}, Dark={StaticResource DangerDark}}" StrokeThickness="2" Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Image Source="fire.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Danger}, Dark={StaticResource DangerDark}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="1 8409 kcal" FontSize="22" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="Spalone kalorie" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource Card}" Stroke="Transparent" Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Image Source="trending.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="46 min" FontSize="22" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="Średnia długość" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource Card}" Stroke="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" StrokeThickness="2" Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Image Source="bolt.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="6 dni" FontSize="26" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="Seria dni z rzędu" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource Card}" Stroke="{AppThemeBinding Light={StaticResource Success}, Dark={StaticResource SuccessDark}}" StrokeThickness="2" Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Image Source="trophy.png" WidthRequest="28" HeightRequest="28" HorizontalOptions="Start">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource Success}, Dark={StaticResource SuccessDark}}" />
+                            </Image.Behaviors>
+                        </Image>
+                        <Label Text="12000 kg" FontSize="26" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+                        <Label Text="Podniosłeś w Sumie" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource SecondaryLightText}, Dark={StaticResource SecondaryDarkText}}" />
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

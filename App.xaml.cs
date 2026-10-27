@@ -7,7 +7,7 @@ namespace _177918
         public App()
         {
             InitializeComponent();
-            UserAppTheme = AppTheme.Light;
+            UserAppTheme = AppTheme.Dark;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
