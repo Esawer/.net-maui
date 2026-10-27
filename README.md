@@ -4,6 +4,13 @@
 Aplikacja **Dziennik Treningów** to proste narzędzie do śledzenia i zarządzania treningami.
 Umożliwia użytkownikom rejestrowanie swoich sesji treningowych, monitorowanie postępów oraz robienia zdjęć progressu.
 
+## Obecnie
+Istnieją widoki takie jak:
+- **Strona główna** - przcisk dodania nowego treningu oraz bloczki/divy informacyjne
+- **Historia treningów** - lista wszystkich treningów
+- **Statystyki** - podsumowanie twoich treningów
+- **Informacje** - informacje o autorze i przyciski do historii treninów i statystyk
+
 ## Pola
 |Nazwa|Typ|Przykład|
 |---|---|---|
