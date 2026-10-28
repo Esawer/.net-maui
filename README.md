@@ -2,29 +2,43 @@
 
 ## Opis
 Aplikacja **Dziennik Treningów** to proste narzędzie do śledzenia i zarządzania treningami.
-Umożliwia użytkownikom rejestrowanie swoich sesji treningowych, monitorowanie postępów oraz robienia zdjęć progressu.
+Umożliwia użytkownikom rejestrowanie sesji treningowych, monitorowanie postępów oraz przeglądanie statystyk.
 
 ## Obecnie
 Istnieją widoki takie jak:
-- **Strona główna** - przcisk dodania nowego treningu oraz bloczki/divy informacyjne
+- **Strona główna** - przycisk rozpoczęcia nowego treningu oraz bloki informacyjne
 - **Historia treningów** - lista wszystkich treningów
+- **Sesja treningu** - dodawanie ćwiczeń w trakcie treningu i zamykanie sesji
 - **Statystyki** - podsumowanie twoich treningów
-- **Informacje** - informacje o autorze i przyciski do historii treninów i statystyk
+- **Informacje** - informacje o autorze i przyciski do historii treningów i statystyk
 
-## Pola
-|Nazwa|Typ|Przykład|
+## Model danych
+Trening reprezentuje klasa `Training`, a pojedyncze ćwiczenie klasa `Exercise` (relacja jeden trening → wiele ćwiczeń).
+
+### Training
+|Właściwość|Typ|Opis|
 |---|---|---|
-|Id|Integer|12|
-|Nazwa|String|"Pompka"|
-|Data|DateTime|25.04.2026|
-|Rekord|Integer|45|
+|Date|DateTime|data treningu|
+|TrainingName|string|nazwa treningu, np. „Push”|
+|AdditionalText|string|dodatkowy opis|
+|Duration|TimeSpan|czas trwania treningu|
+|Exercises|ObservableCollection&lt;Exercise&gt;|ćwiczenia wykonane w treningu|
+
+### Exercise
+|Właściwość|Typ|Opis|
+|---|---|---|
+|Number|int|kolejny numer ćwiczenia w treningu|
+|ExerciseName|string|nazwa ćwiczenia, np. „Pompki”|
+|Series|int|liczba serii|
+|Reps|int|liczba powtórzeń|
+|Weight|double|obciążenie w kilogramach|
 
 ## Rozbudowa
 Aplikacja będzie mieć funkcje takie jak:
-- Dodawanie nowych ćwiczeń
 - **Zdjęcia** progresu
-- Edycja rekordów (CRUD)
-- **Statystyki** postępów
+- Edycja i usuwanie treningów (CRUD)
+- **Statystyki** postępów w czasie
+- Szczegóły treningu po dotknięciu wiersza w historii
 
 ## Kolorystyka
 Aplikacja posiada zarówno **tryb jasny jak i ciemny**.
@@ -59,7 +73,6 @@ Aplikacja posiada zarówno **tryb jasny jak i ciemny**.
 |Ciemny|`DangerDark`|#f87171|
 |Jasny|`Success`|#10b981|
 |Ciemny|`SuccessDark`|#34d399|
-
 
 ## Autor
 Autorem projektu jest Igor Wróblewski

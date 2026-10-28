@@ -11,5 +11,10 @@
         {
             await Shell.Current.GoToAsync(nameof(InfoPage));
         }
+
+        private async void StartTrainingClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(TrainingPage));
+        }
     }
 }

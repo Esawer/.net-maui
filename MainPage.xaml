@@ -74,7 +74,7 @@
             </FlexLayout>
         </Grid>
 
-        <ImageButton Grid.Row="2" Source="plus.png" WidthRequest="72" HeightRequest="72" Padding="12" Margin="16" BorderColor="Transparent" HorizontalOptions="Center" CornerRadius="36" BackgroundColor="{StaticResource AccentLight}">
+        <ImageButton Grid.Row="2" Source="plus.png" WidthRequest="72" HeightRequest="72" Padding="12" Margin="16" BorderColor="Transparent" HorizontalOptions="Center" CornerRadius="36" BackgroundColor="{StaticResource AccentLight}" Clicked="StartTrainingClicked">
             <ImageButton.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{StaticResource PrimaryLightText}" />
             </ImageButton.Behaviors>

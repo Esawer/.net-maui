@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:models="clr-namespace:_177918.Models"
+             x:Class="_177918.TrainingPage"
+             Title="TrainingPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *, Auto, Auto">
+        <Border Grid.Row="0" Style="{StaticResource Navbar}">
+            <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
+                <Label Text="Czas" TextColor="{AppThemeBinding Light={StaticResource PrimaryDarkText}, Dark={StaticResource PrimaryLightText}}" Style="{StaticResource SubHeadline}" VerticalOptions="Center" />
+                <ImageButton Source="x.png" Aspect="AspectFit" HorizontalOptions="Center" WidthRequest="44" HeightRequest="44" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="OnProfileClicked">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{AppThemeBinding Light={StaticResource SecondaryDarkText}, Dark={StaticResource SecondaryDarkText}}"/>
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </FlexLayout>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="8" Spacing="8" BindableLayout.ItemsSource="{Binding Exercises}">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:Exercise">
+                        <Border Style="{StaticResource Card}" Stroke="Transparent" Margin="4" Padding="16">
+                            <Grid ColumnDefinitions="*,*,*, *" ColumnSpacing="8">
+                                <Label Text="{Binding ExerciseName}" Grid.Column="0" VerticalOptions="Center" />
+                                <Label Text="{Binding Series}" Grid.Column="1" VerticalOptions="Center" />
+                                <Label Text="{Binding Reps}" Grid.Column="2" VerticalOptions="Center" />
+                                <Label Text="{Binding Weight}" Grid.Column="3" VerticalOptions="Center" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>                
+
+            </VerticalStackLayout>
+
+
+        </ScrollView>
+
+        <Border Grid.Row="2">
+            <FlexLayout Direction="Row" JustifyContent="SpaceBetween">
+                   <Entry x:Name="NameEntry" Placeholder="Nazwa ćwiczenia" />
+                <Grid ColumnDefinitions="*,*,*, *" ColumnSpacing="8">
+                    <Entry x:Name="SerieEntry" Grid.Column="0" Placeholder="Liczba serii" />
+                    <Entry x:Name="RepsEntry" Grid.Column="1" Placeholder="Liczba powtórzeń" />
+                    <Grid ColumnDefinitions="*, Auto" Grid.Column="2">
+                        <Entry x:Name="WeightEntry" Placeholder="Ciężar" />
+                        <Label Grid.Column="1" Text="kg" VerticalOptions="Center" FontSize="13"/>
+                    </Grid>
+                    <Button Text="+" Grid.Column="3" Clicked="OnAddExerciseClicked" />
+
+                </Grid>
+            </FlexLayout>
+        </Border>
+
+        <Border Grid.Row="3">
+                <Button Text="Zakończ trening" Clicked="OnFinishTrainingClicked"/>
+        </Border>
+
+    </Grid>
+
+</ContentPage>

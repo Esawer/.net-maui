@@ -8,7 +8,7 @@
             Routing.RegisterRoute(nameof(InfoPage), typeof(InfoPage));
             Routing.RegisterRoute(nameof(StatsPage), typeof(StatsPage));
             Routing.RegisterRoute(nameof(TrainingsPage), typeof(TrainingsPage));
-            Routing.RegisterRoute(nameof(TrainingsPage), typeof(TrainingsPage));
+            Routing.RegisterRoute(nameof(TrainingPage), typeof(TrainingPage));
         }
     }
 }
